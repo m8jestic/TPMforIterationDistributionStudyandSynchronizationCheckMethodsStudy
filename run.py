@@ -139,11 +139,8 @@ def _measure_chunk(args):
             iter_ += 1
             iterations += 1
 
-            if Bits > 1:
-                vals = np.r_[np.arange(-M, 0), np.arange(1, M + 1)]
-                X = np.random.choice(vals, size=(K, N))
-            else:
-                X = np.random.randint(-1, 2, [K, N])
+
+            X = np.random.randint(-1, 2, [K, N])
 
             out_A = TPM_A.compute_output(X)
             out_B = TPM_B.compute_output(X)
@@ -434,11 +431,9 @@ def _measure_sync_iteration_chunk(args):
         factSyncIter = None
 
         for iter_ in range(1, max_iterations + 1):
-            if Bits > 1:
-                vals = np.r_[np.arange(-M, 0), np.arange(1, M + 1)]
-                X = np.random.choice(vals, size=(K, N))
-            else:
-                X = np.random.randint(-1, 2, [K, N])
+
+
+            X = np.random.randint(-1, 2, [K, N])
 
             out_A = TPM_A.compute_output(X)
             out_B = TPM_B.compute_output(X)
